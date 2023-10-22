@@ -1,24 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+
+import { UseGetDataMqtt } from "./hooks/mqtt";
+
 
 function App() {
+  // const {data : dataQuery} = UseGetDataMqtt()
+const {data} = UseGetDataMqtt("pumma/canti")
+console.log(data, "data query");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <p className="font-bold text-3xl">{data?.DATETIME}</p>wkkw
+    </>
   );
 }
 
